@@ -14,6 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
         public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
             http
+                    .csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests(auth -> auth
                             .requestMatchers("/api/create-cookie").permitAll()
                             .requestMatchers("/api/get-cookie").permitAll()
@@ -21,6 +22,14 @@ import org.springframework.security.web.SecurityFilterChain;
                             .requestMatchers("/api/get-session").permitAll()
                             .requestMatchers("/api/create-jwt").permitAll()
                             .requestMatchers("/api/get-jwt").permitAll()
+                            .requestMatchers("/api/user/login-page").permitAll()
+                            .requestMatchers("/api/user/signup").permitAll()
+                            .requestMatchers("/").permitAll()
+                            .requestMatchers(
+                                    "/",
+                                    "/css/**",
+                                    "/js/**"
+                            ).permitAll()
                             .anyRequest().authenticated()
                     );
 
