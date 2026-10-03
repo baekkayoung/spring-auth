@@ -19,6 +19,8 @@ import org.springframework.security.web.SecurityFilterChain;
                             .requestMatchers("/api/get-cookie").permitAll()
                             .requestMatchers("/api/create-session").permitAll()
                             .requestMatchers("/api/get-session").permitAll()
+                            .requestMatchers("/api/create-jwt").permitAll()
+                            .requestMatchers("/api/get-jwt").permitAll()
                             .anyRequest().authenticated()
                     );
 
