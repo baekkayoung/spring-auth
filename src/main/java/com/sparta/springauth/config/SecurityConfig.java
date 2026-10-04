@@ -24,6 +24,7 @@ import org.springframework.security.web.SecurityFilterChain;
                             .requestMatchers("/api/get-jwt").permitAll()
                             .requestMatchers("/api/user/login-page").permitAll()
                             .requestMatchers("/api/user/signup").permitAll()
+                            .requestMatchers("/api/user/login").permitAll()
                             .requestMatchers("/").permitAll()
                             .requestMatchers(
                                     "/",
