@@ -25,6 +25,7 @@ import org.springframework.security.web.SecurityFilterChain;
                             .requestMatchers("/api/user/login-page").permitAll()
                             .requestMatchers("/api/user/signup").permitAll()
                             .requestMatchers("/api/user/login").permitAll()
+                            .requestMatchers("/api/products").permitAll()
                             .requestMatchers("/").permitAll()
                             .requestMatchers(
                                     "/",
